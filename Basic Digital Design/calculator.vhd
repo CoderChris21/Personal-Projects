@@ -12,6 +12,7 @@ entity calculator is
   AC        :in STD_LOGIC;
   Clock     :in STD_LOGIC
   );
+end calculator;
 
 architecture behavioral of calculator is
 type state_type is (s1,s2,s3);
