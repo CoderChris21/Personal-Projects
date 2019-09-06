@@ -18,5 +18,4 @@ begin
          "0010" when sw = "01" else
          "0100" when sw = "10" else
          "1000";
-
-end Behavioral;
+end behavioral;
