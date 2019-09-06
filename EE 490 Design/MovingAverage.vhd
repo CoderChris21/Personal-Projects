@@ -20,7 +20,7 @@ end entity;
 architecture RTL of MovingAverage is
    -- Can also normalize [0,1] with unsigned if necessary
    type mat_vector is array (0 to 2**pwr-1) of signed(N-1 downto 0);
-   -- register for storing previous samples via Circcular Buffering
+   -- register for storing previous samples via Circular Buffering
    signal master_reg        :mat_vector; 
    -- Pointers
    signal read_data         :signed(N-1 downto 0);
