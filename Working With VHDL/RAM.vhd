@@ -8,7 +8,7 @@ entity RAM is
     Rst   :in STD_LOGIC;
     EN    :in STD_LOGIC;
     x     :in STD_LOGIC_VECTOR(15 downto 0);
-    y     :out STD_LOGIC_VECTOR(15 downto 0);
+    y     :out STD_LOGIC_VECTOR(15 downto 0)
   );
  end entity;
     
