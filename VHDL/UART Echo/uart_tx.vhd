@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Engineer: Chris Sam
--- 
+-- Date: 12/4/2020
 -- Module Name: uart_tx
 -- Description: 
 -- transmits data via uart at 115.2 baud rate.  Once FIFO has data available,
