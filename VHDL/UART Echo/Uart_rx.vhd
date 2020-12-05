@@ -11,7 +11,7 @@ generic (bit_width	: integer := 8;
 port (
     clk     	: IN  STD_LOGIC;								-- 100 MHz clock
     rst     	: IN  STD_LOGIC;								-- active high reset
-	serial_in	: IN  STD_LOGIC;								-- asynchronous serial in
+    serial_in	: IN  STD_LOGIC;								-- asynchronous serial in
     fifo_wr_en 	: OUT STD_LOGIC;
     fifo_din	: OUT STD_LOGIC_VECTOR(bit_width-1 downto 0)
  );
