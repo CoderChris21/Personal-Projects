@@ -1,3 +1,13 @@
+----------------------------------------------------------------------------------
+-- Engineer: Chris Sam
+-- 
+-- Module Name: uart_rx
+-- Description: 
+-- Receives serial data from host computer via UART.
+-- Baud rate is defined as a generic so that if a different rate is
+-- desired, the rest of the code does not have to be touched.
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
