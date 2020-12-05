@@ -1,3 +1,13 @@
+----------------------------------------------------------------------------------
+-- Engineer: Chris Sam
+-- 
+-- Module Name: uart_tx.vhd
+-- Description: 
+-- transmits data via uart at 115.2 baud rate.  Once FIFO has data available,
+-- module will begin transmission.
+----------------------------------------------------------------------------------
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
@@ -11,10 +21,10 @@ generic (bit_width	: integer := 8;
 port (
     clk     	  : IN  STD_LOGIC;		-- 100 MHz clock
     rst     	  : IN  STD_LOGIC;		-- active high reset
-	  fifo_empty	: IN  STD_LOGIC;
-    fifo_rd_en 	: OUT STD_LOGIC;
+    fifo_empty	  : IN  STD_LOGIC;
+    fifo_rd_en 	  : OUT STD_LOGIC;
     fifo_dout	  : IN  STD_LOGIC_VECTOR(bit_width-1 downto 0);
-	serial_out	  : OUT STD_LOGIC		-- asynchronous serial out	
+    serial_out	  : OUT STD_LOGIC		-- asynchronous serial out	
  );
 end uart_tx;
 
