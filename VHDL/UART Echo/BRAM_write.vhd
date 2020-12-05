@@ -1,3 +1,12 @@
+----------------------------------------------------------------------------------
+-- Engineer: Chris Sam
+-- 
+-- Module Name: BRAM_write
+-- Description: 
+-- Writes to BRAM once data has been received via UART and stored in fifo.  Instead
+-- of writing to same address, it will use the next address the next time data is 
+-- received.
+----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
