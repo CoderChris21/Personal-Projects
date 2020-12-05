@@ -1,3 +1,12 @@
+----------------------------------------------------------------------------------
+-- Engineer: Chris Sam
+-- Date: 12/4/2020
+-- Module Name: BRAM_read
+-- Description: 
+-- Reads from BRAM once data has been written to it.  Address to be read is sent 
+-- through double_flop, crossing clock domains while addressing metastable conditions 
+-- that may arise.  Read for 2 cycles due to BRAM read latency.
+----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
