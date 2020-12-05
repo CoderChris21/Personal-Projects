@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Engineer: Chris Sam
--- 
+-- Date: 12/4/2020
 -- Module Name: uart_rx
 -- Description: 
 -- Receives serial data from host computer via UART.
