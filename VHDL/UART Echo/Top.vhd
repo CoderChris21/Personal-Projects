@@ -1,3 +1,24 @@
+----------------------------------------------------------------------------------
+-- Engineer: Chris Sam
+-- 
+-- Module Name: Top
+--
+-- Dependencies:
+-- double_flop.vhd
+-- uart_rx.vhd
+-- uart_tx.vhd
+-- BRAM_write.vhd
+-- BRAM_read.vhd
+-------------- Xilinx Instantiated IPs-----------------
+-- BRAM
+-- FIFO
+-- Mixed Mode Clock Manager (MMCM)
+--
+-- Description: 
+-- Receives serial data from host computer via UART, stores it in BRAM, and reads back to computer.
+-- Write to BRAM at 75 MHz, read from BRAM at 100 Mhz.
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
@@ -113,9 +134,9 @@ component uart_rx is
 generic (bit_width	: integer := 8);
 port (
     clk     	  : IN  STD_LOGIC;								-- 100 MHz clock
-    rst       	: IN  STD_LOGIC;								-- active high reset
-	  serial_in	  : IN  STD_LOGIC;								-- asynchronous serial in
-    fifo_wr_en 	: OUT STD_LOGIC;
+    rst       	  : IN  STD_LOGIC;								-- active high reset
+    serial_in	  : IN  STD_LOGIC;								-- asynchronous serial in
+    fifo_wr_en 	  : OUT STD_LOGIC;
     fifo_din	  : OUT STD_LOGIC_VECTOR(bit_width-1 downto 0)
  );
 end component;
@@ -125,10 +146,10 @@ generic (bit_width	: integer := 8);
 port (
     clk     	  : IN  STD_LOGIC;		-- 100 MHz clock
     rst     	  : IN  STD_LOGIC;		-- active high reset
-	  fifo_empty	: IN  STD_LOGIC;
-    fifo_rd_en 	: OUT STD_LOGIC;
+    fifo_empty	  : IN  STD_LOGIC;
+    fifo_rd_en 	  : OUT STD_LOGIC;
     fifo_dout	  : IN  STD_LOGIC_VECTOR(bit_width-1 downto 0);
-	serial_out	  : OUT STD_LOGIC		-- asynchronous serial in	
+    serial_out	  : OUT STD_LOGIC		-- asynchronous serial in	
  );
 end component;
 
@@ -164,6 +185,7 @@ end component;
 
 begin
 clk_en <= not clk_lock;
+	
 --Clocking
 clock_gen: clk_wiz_0  
  port map(
@@ -174,8 +196,7 @@ clock_gen: clk_wiz_0
   clk_in1           => clk
  );
 
-
-
+	
 ---UART RX to FIFO-------------
 rx: uart_rx
 port map (
@@ -220,7 +241,6 @@ Port Map(
         D   => addr_in,
         Q   => addr_out_ff
         );
-
   
 BRAM: blk_mem_gen_0
   port map (
@@ -234,6 +254,7 @@ BRAM: blk_mem_gen_0
     doutb       => bram_out
   );
 
+-- Read from BRAM
 BRAM_FIFO_RD: BRAM_read
   Port Map (       
    clk          => clk_rd,
@@ -246,8 +267,8 @@ BRAM_FIFO_RD: BRAM_read
    rd_addr      => addr_out_bram,      -- Address for bram
    data_out     => bram_to_fifo   
    );
-
-
+-- FIFO to UART_TX
+-- Read BRAM, store in FIFO and transmit.
 TX_FIFO: fifo_generator_1 
   PORT MAP(
     clk         => clk_rd,
@@ -269,6 +290,5 @@ port map (
     fifo_dout	    =>         fifo_tx,      
 	serial_out	    =>         data_out
  );
-
 
 end structure;
