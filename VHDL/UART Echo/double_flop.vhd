@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Engineer: Chris Sam
--- 
+-- Date: 12/4/2020
 -- Module Name: double_flop
 -- Description: 
 -- Sends BRAM address to be read from, crossing clock domains
