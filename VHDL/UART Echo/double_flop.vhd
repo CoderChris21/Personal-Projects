@@ -1,3 +1,11 @@
+----------------------------------------------------------------------------------
+-- Engineer: Chris Sam
+-- 
+-- Module Name: double_flop
+-- Description: 
+-- Sends BRAM address to be read from, crossing clock domains
+-- from 75 to 100 Mhz.  To resolve metastability, synchronizer flip flops are used.
+----------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
