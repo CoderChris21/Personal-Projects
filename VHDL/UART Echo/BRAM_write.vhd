@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Engineer: Chris Sam
--- 
+-- Date: 12/4/2020
 -- Module Name: BRAM_write
 -- Description: 
 -- Writes to BRAM once data has been received via UART and stored in fifo.  Instead
