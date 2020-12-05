@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------
 -- Engineer: Chris Sam
 -- 
--- Module Name: uart_tx.vhd
+-- Module Name: uart_tx
 -- Description: 
 -- transmits data via uart at 115.2 baud rate.  Once FIFO has data available,
 -- module will begin transmission.
