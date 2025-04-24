@@ -17,5 +17,5 @@ Code provided is for portability between MATLAB and VHDL and some key modules de
 3) Moving Average Filter using Circular Buffering
 
 ## Working with VHDL (In Progress)
-1) Interfacing RAM with FPGA
-
+1) Generic SPI Interface
+2) UART echo 
