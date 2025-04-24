@@ -1,0 +1,5 @@
+set_property SRC_FILE_INFO {cfile:C:/Users/ChristopherSam/XilinxProjects/HelloEthernet/HelloEthernet.srcs/constrs_1/new/ArtyXDC.xdc rfile:../../../HelloEthernet.srcs/constrs_1/new/ArtyXDC.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C2 [get_ports reset]
+set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN G18 [get_ports REF_CLK_ETH]
